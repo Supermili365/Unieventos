@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Eventos Unimagdalena</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="header-left">
+<img src="img/logo.png" class="logo">
+<h1>EVENTOS UNIMAGDALENA</h1>
+</div>
+
+<button id="loginBtn">Login</button>
+
+</header>
+
+
+<div class="search">
+
+<input type="text" id="buscar" placeholder="Buscar general...">
+
+<select id="categoria">
+<option value="todos">Todas las categorías</option>
+<option value="cultura">Cultura</option>
+<option value="lectura">Lectura</option>
+<option value="festival">Festival</option>
+</select>
+
+</div>
+
+
+<section>
+
+<h2>Eventos actuales</h2>
+
+<div class="mensaje">
+
+<p>¡Quédate atento a los próximos eventos!</p>
+
+<p id="mensajeActual">
+En el momento no se encuentra abierto ningún evento
+</p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>Próximos eventos</h2>
+
+<div class="eventos" id="proximosEventos"></div>
+
+<p id="mensajeProximos">No hay eventos registrados</p>
+
+</section>
+
+
+<footer>
+
+<p>footer</p>
+
+</footer>
+
+</div>
+
+
+<div id="detalleEvento" class="detalle oculto">
+
+<h2 id="tituloDetalle"></h2>
+
+<img id="imgDetalle">
+
+<p id="descDetalle"></p>
+
+<button onclick="volver()">Volver</button>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
