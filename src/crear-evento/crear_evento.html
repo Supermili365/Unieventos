@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Evento — Unimagdalena</title>
+  <link rel="stylesheet" href="../shared/css/estilosGenerales.css">
+  <link rel="stylesheet" href="crear_evento.css">
+  <script src="../shared/components/components.js"></script>
+
+</head>
+
+<body>
+  <div id="overlay" class="overlay oculto"></div>
+  <aside id="menuUsuario" class="menu-lateral">
+  </aside>
+  <div class="container">
+    <div id="header"></div>
+    <div id="breadcrumb"></div>
+
+    <main class="contenido">
+      <section class="panel-principal">
+        <div class="panel-titulo">
+          <h2>Crear Evento</h2>
+        </div>
+
+        <form id="formCrearEvento" class="formulario-evento">
+          <div class="form-grid">
+            <div class="form-column">
+              <div class="form-group">
+                <label for="nombre">Nombre del Evento</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="fechaFin">Fecha de Finalización</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripción del evento</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Portada</label>
+                <div class="upload-area" id="uploadArea">
+                  <span class="material-symbols-outlined">add_a_photo</span>
+                  <input type="file" id="portada" name="portada" hidden accept="image/*">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-column">
+              <div class="form-group">
+                <label for="fechaApertura">Fecha de apertura</label>
+                <input type="date" id="fechaApertura" name="fechaApertura" required>
+              </div>
+              <div class="form-group">
+                <label for="dirigidoA">Dirigido a</label>
+                <select id="dirigidoA" name="dirigidoA" class="form-select">
+                  <!-- JS will populate options -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tipoEvento">Tipo de Evento</label>
+                <select id="tipoEvento" name="tipoEvento" class="form-select">
+                  <!-- JS will populate options -->
+                </select>
+              </div>
+              <div class="form-group schedules-group">
+                <label>Horarios Disponibles</label>
+                <div id="schedulesList" class="schedules-list">
+                  <!-- Schedule rows will be added here via JS -->
+                </div>
+                <button type="button" id="addScheduleBtn" class="btn-secondary">
+                  <span class="material-symbols-outlined">add_circle</span> Agregar Horario
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <!-- <div class="qr-box">
+              <span class="material-symbols-outlined">qr_code_2</span>
+            </div> -->
+            <button type="submit" class="btn-guardar">Guardar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+  </div>
+
+  <script>
+    Components.loadHeader('../shared/img/logo.png',
+      `<button id="userBtn" class="user-button" type="button" aria-label="Usuario">
+         <span class="material-symbols-outlined">account_circle</span>
+       </button>`);
+    Components.loadMenuUsuario();
+    Components.loadBreadcrumb([
+      { label: 'Inicio', link: '../dashboard/logeado.html' },
+      { label: 'Mis Eventos', link: '../mis-eventos/mis_eventos.html' },
+      { label: 'Crear Evento' }
+    ]);
+    Components.loadFooter();
+  </script>
+  <script src="crear_evento.js"></script>
+</body>
+
+</html>

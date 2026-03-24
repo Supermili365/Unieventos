@@ -1,0 +1,8 @@
+/* Estilos Globales para el Footer de Unieventos */
+
+footer {
+    background: #2f80c3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

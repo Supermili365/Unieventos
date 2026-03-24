@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unimag Eventos — Login</title>
+  <link rel="stylesheet" href="../shared/css/estilosGenerales.css">
+  <link rel="stylesheet" href="login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="header">
+      <div class="logo-container">
+        <img src="../shared/img/Escudo_unimag_sm.png" alt="Escudo Universidad">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Unimag Eventos</h2>
+      <form id="formLogin">
+        <input type="email" id="email" placeholder="tucorreo@unimagdalena.edu.co" required>
+        <input type="password" id="password" placeholder="contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <a href="../../index.html" class="guest-link">Continuar como invitado</a>
+    </div>
+  </div>
+
+  <script src="../shared/components/components.js"></script>
+  <script>
+    Components.loadBreadcrumb([
+      { label: 'Inicio', link: '../../index.html' },
+      { label: 'Login' }
+    ]);
+    Components.loadFooter();
+  </script>
+
+  <script src="login.js"></script>
+
+</body>
+
+</html>

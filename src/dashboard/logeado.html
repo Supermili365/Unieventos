@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Eventos Unimagdalena</title>
-  <link rel="stylesheet" href="src/shared/css/estilosGenerales.css">
-  <link rel="stylesheet" href="src/home/index.css">
+  <link rel="stylesheet" href="../shared/css/estilosGenerales.css">
+  <link rel="stylesheet" href="../home/index.css">
 </head>
 
 <body>
+
+  <div id="overlay" class="overlay oculto"></div>
+  <aside id="menuUsuario" class="menu-lateral">
+  </aside>
 
   <div class="container">
 
@@ -27,19 +31,14 @@
         <option value="Social">Social</option>
         <option value="Tecnologico">Tecnologico</option>
         <option value="Bienestar">Bienestar</option>
-
       </select>
-
     </div>
 
-
     <section>
-
       <h2>Eventos actuales</h2>
       <div class="eventos" id="eventosActuales"></div>
       <p id="mensajeActuales">No hay eventos registrados</p>
     </section>
-
 
     <section>
       <h2>Próximos eventos</h2>
@@ -50,41 +49,34 @@
     <section>
       <h2>Eventos Asistidos</h2>
       <div class="mensaje">
-        <p>Inicia sesión y no te pierdas de ningún evento</p>
-        <p id="mensajeActual">Solo se visualizan los eventos abiertos al público</p>
+        <p>¡Quédate atento a los eventos!</p>
+        <p id="mensajeActual">Hasta el momento no has asistido a ningún evento</p>
       </div>
     </section>
+
     <div id="footer"></div>
 
   </div>
 
-
   <div id="detalleEvento" class="detalle oculto">
-
     <h2 id="tituloDetalle"></h2>
-
-    <img id="imgDetalle">
-
+    <img id="imgDetalle" alt="Detalle del evento">
     <p id="descDetalle"></p>
-
     <button onclick="volver()">Volver</button>
-
   </div>
 
-  <script src="src/home/index.js"></script>
-
-  <script src="src/shared/components/components.js"></script>
+  <script src="logeado.js"></script>
+  <script src="../shared/components/components.js"></script>
   <script>
     Components.loadHeader(
-      'src/shared/img/logo.png',
-      '<button id="loginBtn">Login</button>'
+      '../shared/img/logo.png',
+      `<button id="userBtn" class="user-button" type="button" aria-label="Usuario">
+         <span class="material-symbols-outlined">account_circle</span>
+       </button>`
     );
+    Components.loadMenuUsuario();
     Components.loadBreadcrumb([{ label: 'Inicio' }]);
     Components.loadFooter();
-
-    document.getElementById('loginBtn').addEventListener('click', function () {
-      window.location.href = 'src/login/login.html';
-    });
   </script>
 
 </body>
